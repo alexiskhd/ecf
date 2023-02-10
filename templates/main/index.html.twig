@@ -1,0 +1,165 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <main>
+
+        <!-- start code desktop -->
+        <div id="grid">
+            <div class="grid__item" id="photo-1">
+                <img src="./assets/photo1.jpg" alt="" class="grid__img">
+                <div class="info__bulle">
+                    infobulle de la mort
+                </div>
+            </div>
+            <div class="grid__item" id="photo-2">
+                <div class="grid__presentation">
+                    <h1 class="grid__titre">Le chef</h1>
+                    <p class="grid__text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Voluptatem unde a molestias tempore id aperiam? Ex eaque doloremque, sed voluptatum ullam
+                        aspernatur tempora, alias necessitatibus dolorem sapiente iste itaque ab!
+                        Minima officiis consectetur praesentium quae velit fugiat ipsa omnis numquam vel voluptate esse
+                        eum, iusto, qui adipisci quasi assumenda tempora optio facilis provident magnam earum. Voluptate
+                        commodi numquam culpa saepe.
+                    </p>
+                    <a class="grid__btn__menu" href="#">
+                        <button type="button" class="btn btn-secondary"> Cartes et menus
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="grid__item" id="photo-3">
+                <video class="grid__img" autoplay muted loop>
+                    <source src="assets/video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="grid__item" id="photo-4">
+                <img src="./assets/photo3.jpg" class="grid__img">
+                <div class="info__bulle">
+                    infobulle de la mort
+                </div>
+            </div>
+
+            <div class="grid__item" id="photo-5">
+                <img src="./assets/photo6.jpg" alt="" class="grid__img">
+                <div class="info__bulle">
+                    infobulle de la mort
+                </div>
+            </div>
+            <div class="grid__item" id="photo-7">
+                <img src="./assets/photo10.jpg" alt="" class="grid__img">
+                <div class="info__bulle">
+                    infobulle de la mort
+                </div>
+            </div>
+            <div class="grid__item" id="photo-8">
+                <img src="./assets/photo8.jpg" alt="" class="grid__img">
+                <div class="info__bulle">
+                    infobulle de la mort
+                </div>
+            </div>
+            <div class="grid__item" id="photo-9">
+                <img src="./assets/photo2.jpg" alt="" class="grid__img">
+                <div class="info__bulle">
+                    infobulle de la mort
+                </div>
+            </div>
+            <div class="grid__item" id="photo-11">
+                <img src="./assets/photo11.jpg" alt="" class="grid__img">
+                <div class="info__bulle">
+                    infobulle de la mort
+                </div>
+            </div>
+            <div class="grid__item" id="photo-12">
+                <img src="./assets/photo7.jpg" alt="" class="grid__img">
+                <div class="info__bulle">
+                    infobulle de la mort
+                </div>
+            </div>
+        </div>
+
+        <!-- end code desktop -->
+
+        <!-- start code mobile : carousel -->
+        <div class="carousel__presentation">
+            <h1 class="carousel__titre">le restaurant, le chef</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis non accusamus nam neque fugit rerum
+                similique atque! Temporibus quasi quo deleniti sequi distinctio, libero, exercitationem quod voluptas in
+                illo maiores!
+                Voluptas molestiae suscipit dolorum
+            </p>
+            <div class="carousel__btn">
+                <a class="carousel__btn__menu" href="#"><button type="button" class="btn btn-secondary"> Cartes et menus
+                    </button></a>
+            </div>
+        </div>
+
+        <div class="main__carousel">
+            <div id="carouselCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1">
+                    </button>
+                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./assets/photo1.jpg" class="d-block w-100 carousel__image" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>First slide label</h5>
+                            <p>Some representative placeholder content for the first slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/photo2.jpg" class="d-block w-100 carousel__image" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Second slide label</h5>
+                            <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/photo3.jpg" class="d-block w-100 carousel__image" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/photo5.jpg" class="d-block w-100 carousel__image" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/photo6.jpg" class="d-block w-100 carousel__image" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- end code mobile -->
+    </main>
+{% endblock %}

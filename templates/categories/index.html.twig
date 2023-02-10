@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cartes{% endblock %}
+
+{% block body %}
+	<main>
+		<div class="wrapper">
+        
+			<div class="collapsible">
+				<input type="checkbox" id="callapsible-entree">
+				<label for="callapsible-entree">               
+                    {% for category in Categories %}
+                        {% if category.id == 27 %} <h2> {{category.name}} </h2> {% endif %}
+                    {% endfor %}
+                </label>
+				<div class="collapsible__text">
+                    {% for category in Categories %}
+                        {% if category.id == 28 %} <h3> {{category.name}} <p> {{category.description}} </p>  <p> {{category.price}}€ </p></h3>{% endif %}
+                    {% endfor %}
+                </div>
+                <div class="collapsible__text">
+                    {% for category in Categories %}                   
+                        {% if category.id == 29 %} <h3> {{category.name}} <p> {{category.description}} </p>  <p> {{category.price}}€ </p></h3>{% endif %}
+                    {% endfor %}
+                </div>
+                <div class="collapsible__text">
+                    {% for category in Categories %}                   
+                        {% if category.id == 30 %} <h3> {{category.name}} <p> {{category.description}} </p>  <p> {{category.price}}€ </p></h3>{% endif %}                 
+                    {% endfor %}
+				</div>
+                
+			</div>
+			<div class="collapsible">
+				<input type="checkbox" id="callapsible-plat">
+				<label for="callapsible-plat">
+                    {% for category in Categories %}
+                        {% if category.id == 31 %} <h2> {{category.name}} </h2> {% endif %}
+                    {% endfor %}
+                </label>
+				<div class="collapsible__text">
+                    {% for category in Categories %}
+                        {% if category.id == 33 %} <h3> {{category.name}} <p> {{category.description}} </p>  <p> {{category.price}}€ </p></h3>{% endif %}
+                    {% endfor %}
+                </div>
+                <div class="collapsible__text">
+                    {% for category in Categories %}                   
+                        {% if category.id == 34 %} <h3> {{category.name}} <p> {{category.description}} </p>  <p> {{category.price}}€ </p></h3>{% endif %}
+                    {% endfor %}
+                </div>
+                <div class="collapsible__text">
+                    {% for category in Categories %}                   
+                        {% if category.id == 35 %} <h3> {{category.name}} <p> {{category.description}} </p>  <p> {{category.price}}€ </p></h3>{% endif %}                 
+                    {% endfor %}
+				</div>
+			</div>
+
+            <div class="collapsible">
+				<input type="checkbox" id="callapsible-desert">
+				<label for="callapsible-desert">
+                    {% for category in Categories %}
+                        {% if category.id == 36 %} <h2> {{category.name}} </h2> {% endif %}
+                    {% endfor %}
+                </label>
+				<div class="collapsible__text">
+                    {% for category in Categories %}
+                        {% if category.id == 37 %} <h3> {{category.name}} <p> {{category.description}} </p>  <p> {{category.price}}€ </p></h3>{% endif %}
+                    {% endfor %}
+                </div>
+                <div class="collapsible__text">
+                    {% for category in Categories %}                   
+                        {% if category.id == 38 %} <h3> {{category.name}} <p> {{category.description}} </p>  <p> {{category.price}}€ </p></h3>{% endif %}
+                    {% endfor %}
+                </div>
+                <div class="collapsible__text">
+                    {% for category in Categories %}                   
+                        {% if category.id == 39 %} <h3> {{category.name}} <p> {{category.description}} </p>  <p> {{category.price}}€ </p></h3>{% endif %}                 
+                    {% endfor %}
+				</div>
+			</div>
+        
+            <div class="collapsible">
+				<input type="checkbox" id="callapsible-menus">
+				<label for="callapsible-menus">
+                    {% for category in Categories %}
+                        {% if category.id == 40 %} <h2> {{category.name}} </h2> {% endif %}
+                    {% endfor %}
+                </label>
+				<div class="collapsible__text">
+                    {% for category in Categories %}
+                        {% if category.id == 41 %} <h3> {{category.name}} <p> {{category.description}} </p>  <p> {{category.price}}€ </p></h3>{% endif %}
+                    {% endfor %}
+                </div>
+                <div class="collapsible__text">
+                    {% for category in Categories %}                   
+                        {% if category.id == 42 %} <h3> {{category.name}} <p> {{category.description}} </p>  <p> {{category.price}}€ </p></h3>{% endif %}
+                    {% endfor %}
+                </div>
+                <div class="collapsible__text">
+                    {% for category in Categories %}                   
+                        {% if category.id == 43 %} <h3> {{category.name}} <p> {{category.description}} </p>  <p> {{category.price}}€ </p></h3>{% endif %}                 
+                    {% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %}

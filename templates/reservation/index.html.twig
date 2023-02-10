@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReservationController!
+{% endblock %}
+
+{% block body %}
+	<main>
+		<div class="main">
+			<video class="background__video" autoplay muted loop>
+				<source src="assets/video.mp4" type="video/mp4">
+			</video>
+			<div class="container__form">
+				
+					{{form_start(form)}}
+					{{form_row(form.date)}}
+					{{form_row(form.heure)}}
+					{{form_row(form.nombreDeCouvert)}}
+					{{form_row(form.nom)}}
+					{{form_row(form.email)}}
+					{{form_row(form.phone)}}
+					<button type="submit" class="btn btn-dark">Reserver</button>
+                    {{form_rest(form)}}
+					{{form_end(form)}}
+
+			</div>
+			
+		</main>
+
+
+	{% endblock %}

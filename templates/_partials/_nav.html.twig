@@ -1,0 +1,23 @@
+    <header>
+        <nav class="navbar">
+            <a href="#"><img src="./assets/logo.png" alt="" class="logo"></a>
+            <div class="nav__links">
+                <ul>
+                    <li><a href="{{path('app_main')}}" class="nav__btn active">À propos</a></li>
+                    <li><a href="./menus.html" class="nav__btn">Cartes</a></li>
+                    <li><a href="{{path('app_login')}}" class="nav__btn">Réserver</a></li>
+                    <li><a href="#" class="nav__btn">Horaires</a></li>
+                    <li><a href="#" class="nav__btn">Infos</a></li>
+                    {% if app.user %}
+                    <li><a href="#" class="nav__btn">Me deconnecter</a></li>
+                   
+                        
+                    {% endif %}
+                    
+                </ul>
+            </div>
+
+            <img class="menuHamburger" src="./assets/Hamburger_icon.svg.png" alt="">
+
+        </nav>
+    </header>

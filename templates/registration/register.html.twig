@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription
+{% endblock %}
+
+{% block body %}
+	<main>
+		<div class="main">
+			<video class="background__video" autoplay muted loop>
+				<source src="assets/video.mp4" type="video/mp4">
+			</video>
+			<div class="container__form">
+            <h1>Inscription</h1>
+				<div class="form-floating mt-3">
+
+					{{ form_start(registrationForm) }}
+					{{ form_row(registrationForm.email) }}
+					{{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+					{{ form_row(registrationForm.name) }}
+					{{ form_row(registrationForm.phoneNumber) }}
+					
+					{{ form_row(registrationForm.agreeTerms) }}
+
+					<button type="submit" class="btn btn-dark">Register</button>
+					{{ form_end(registrationForm) }}
+				</div>
+			</div>
+		</main>
+
+	{% endblock %}

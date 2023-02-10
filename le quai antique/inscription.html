@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./style/style.css">
+    <title>inscription</title>
+</head>
+
+<body>
+    <!-- test menu burger -->
+    <header>
+        <nav class="navbar">
+            <a href="#"><img src="./assets/logo.png" alt="" class="logo"></a>
+            <div class="nav__links">
+                <ul>
+                    <li><a href="./index.html" class="nav__btn "> À propos </a></li>
+                    <li><a href="./menus.html" class="nav__btn">Cartes</a></li>
+                    <li><a href="./Connexion.html" class="nav__btn active">Réserver</a></li>
+                    <li><a href="#" class="nav__btn">Horaires</a></li>
+                    <li><a href="#" class="nav__btn">Infos</a></li>
+                </ul>
+            </div>
+
+            <img class="menuHamburger" src="./assets/Hamburger_icon.svg.png" alt="">
+
+        </nav>
+    </header>
+    <main>
+        <div class="main">
+            <video class="background__video" autoplay muted loop>
+                <source src="assets/video.mp4" type="video/mp4">
+            </video>
+
+            <div class="container__form">
+
+                <form class="form__inscription">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingText" placeholder="nom">
+                        <label for="floatingText">Nom</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword"> Mot de passe</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="tel" class="form-control" id="floating-tel" placeholder="téléphone">
+                        <label for="floatingTelephone">Téléphone</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected>nombre de personnes</option>
+                            <option value="1">une</option>
+                            <option value="2">deux</option>
+                            <option value="3">trois</option>
+                            <option value="4">quatre</option>
+                            <option value="5">cinq</option>
+                            <option value="6">six</option>
+                            <option value="7">sept</option>
+                            <option value="8">huit</option>
+                            <option value="9">neuf</option>
+                            <option value="10">dix</option>
+                            <option value="11">onze</option>
+                            <option value="12">douze</option>
+                        </select>
+                        <label for="floatingSelect">selectionner le nombre de personnes</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                            style="height: 100px"></textarea>
+                        <label for="floatingTextarea2">mentionner vos allergies</label>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-dark">Submit </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__contact">
+            <div>
+                <img src="./assets/logo.png" class="footer__logo" alt="">
+            </div>
+            <div>
+                <p>17 rue oberkampkf <br> 75011 PARIS </p>
+            </div>
+            <div>
+                <a href="mailto:khider.alexis@gmail.com">khider.alexis@gmail.com</a>
+            </div>
+            <div>
+                <a href="tel:0673575267">0673575267</a>
+            </div>
+            <div>
+                <img src="./assets/facebook-blanc.png" class="footer__fb" alt="">
+                <img src="./assets/insta-black.png" class="footer__ig" alt="">
+            </div>
+        </div>
+
+        <div class="horaires">
+            <h3>horaires d'ouverture :</h3>
+            <div>
+                <p>lundi: 12h-14h / 19h-22h</p>
+                <p>Mardi: 12h-14h / 19h-22h</p>
+                <p>Mercredi: fermé</p>
+                <p>Jeudi: 12h-14h / 19h-22h</p>
+                <p>Vendredi: 12h-14h / 19h-22h</p>
+                <p>Samedi: 19h-23h</p>
+                <p>Dimanche: 12h-14h</p>
+            </div>
+        </div>
+
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.726816485928!2d2.3687975999999997!3d48.8634195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66dfd75041e79%3A0x566cca682da30602!2s17%20Rue%20Oberkampf%2C%2075011%20Paris!5e0!3m2!1sfr!2sfr!4v1674118144465!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </footer>
+
+    <script src="./javascript/index.js"></script>
+</body>
+
+</html>
