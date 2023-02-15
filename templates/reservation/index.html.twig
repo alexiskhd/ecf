@@ -1,30 +1,48 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Hello ReservationController!
-{% endblock %}
-
+{% block title %}Hello ReservationController! {% endblock %}
+ {% block stylesheets %}
+  {% endblock %}
 {% block body %}
+<body>
 	<main>
 		<div class="main">
 			<video class="background__video" autoplay muted loop>
 				<source src="assets/video.mp4" type="video/mp4">
 			</video>
 			<div class="container__form">
-				
-					{{form_start(form)}}
-					{{form_row(form.date)}}
-					{{form_row(form.heure)}}
-					{{form_row(form.nombreDeCouvert)}}
-					{{form_row(form.nom)}}
-					{{form_row(form.email)}}
-					{{form_row(form.phone)}}
-					<button type="submit" class="btn btn-dark">Reserver</button>
-                    {{form_rest(form)}}
-					{{form_end(form)}}
-
-			</div>
-			
+			<input type="text" id="basicDate" placeholder="Please select Date Time" data-input>
+			<input type="date" id="form-date" placeholder="Please select Date Time" data-input>
+				{{form_start(form)}}
+				{{form_row(form.date)}}
+				{{form_row(form.heure)}}				
+				{{form_row(form.nombreDeCouvert)}}
+				{{form_row(form.nom)}}
+				{{form_row(form.email)}}
+				{{form_row(form.phone)}}
+				<button type="submit" class="btn btn-dark">Reserver</button>
+				{{form_end(form)}}
+			</div>		
 		</main>
 
 
-	{% endblock %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        (html comment removed:   Flatpickr  )
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+    
+	<script>
+    	$("#basicDate").flatpickr({
+    		enableTime: true,
+        	dateFormat: "F, d Y H:i"
+    	});
+
+	</script>
+</body>
+{% endblock %}
+
+	
+
+	
+
+	
+	
+	

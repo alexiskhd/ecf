@@ -17,9 +17,6 @@ class Reservation
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
-    #[ORM\Column(type: Types::TIME_MUTABLE)]
-    private ?\DateTimeInterface $heure = null;
-
     #[ORM\Column]
     private ?int $nombreDeCouvert = null;
 
@@ -31,6 +28,13 @@ class Reservation
 
     #[ORM\Column(length: 100)]
     private ?string $email = null;
+
+    #[ORM\ManyToOne(inversedBy: 'reservations')]
+    private ?Services $service = null;
+
+    #[ORM\Column(type: Types::TIME_MUTABLE)]
+    private ?\DateTimeInterface $heure = null;
+
 
     public function getId(): ?int
     {
@@ -45,18 +49,6 @@ class Reservation
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
-
-        return $this;
-    }
-
-    public function getHeure(): ?\DateTimeInterface
-    {
-        return $this->heure;
-    }
-
-    public function setHeure(\DateTimeInterface $heure): self
-    {
-        $this->heure = $heure;
 
         return $this;
     }
@@ -108,4 +100,29 @@ class Reservation
 
         return $this;
     }
+
+    public function getServices(): ?Services
+    {
+        return $this->service;
+    }
+
+    public function setServices(?Services $service): self
+    {
+        $this->service = $service;
+
+        return $this;
+    }
+
+    public function getHeure(): ?\DateTimeInterface
+    {
+        return $this->heure;
+    }
+
+    public function setHeure(\DateTimeInterface $heure): self
+    {
+        $this->heure = $heure;
+
+        return $this;
+    }
+
 }

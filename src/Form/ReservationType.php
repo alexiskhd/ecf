@@ -3,7 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Reservation;
+use App\Entity\Services;
+use App\Repository\ServicesRepository;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -11,6 +14,9 @@ use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 
 class ReservationType extends AbstractType
 {
@@ -19,14 +25,23 @@ class ReservationType extends AbstractType
         $builder
             ->add('date', DateType::class,[
                 'attr' => [
-                    'class' => 'form-floating'
-                ]
+                    'class' => 'form-floating',
+                    'id' => 'form-date'
+                ],
+                'widget' => 'single_text',
+                'html5' => false
+                
             ])
+
             ->add('heure', TimeType::class, [
+                'placeholder' => 'choisir une heure',
+                'hours' => array(12, 13, 14, 19, 20, 21),
+                'minutes' => array(15, 30, 45),
                 'attr' => [
-                    'class' => 'form-floating'
+                    'class' => 'form-floatingl'
                 ]
             ])
+
             ->add('nombreDeCouvert', ChoiceType::class,[
                 'attr' => [
                     'class' => 'form-floating'
@@ -60,11 +75,21 @@ class ReservationType extends AbstractType
             ])
         ;
     }
-
+    
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Reservation::class,
+            'data_class' => Reservation::class
+            
         ]);
     }
 }
+
+//EntityType::class, [
+//  'choice_label' => 'name',
+ //   'label' => 'Service',
+//    'group_by' => 'parent.name',
+//    'query_builder' => function(ServicesRepository $sr){
+//        return $sr->createQueryBuilder('s')
+ //       ->where('s.parent IS NOT NULL');
+//    },

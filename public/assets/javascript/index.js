@@ -1,4 +1,23 @@
- const menuHamburger = document.querySelector(".menuHamburger")
+import flatpickr from 
+"https://cdn.skypack.dev/flatpickr@4.6.13";
+
+
+
+const initFlatpickr = () => {
+    const FP = document.getElementId('date');
+    Flatpickr(FP, {
+        disable: [(date)=>(
+            [0, 6].includes(date.getDay())
+        )],
+        enableTime: true,
+    })
+}	
+
+initFlatpickr();
+
+
+// menu Burger //
+const menuHamburger = document.querySelector(".menuHamburger")
 const navLinks = document.querySelector(".nav__links")
     
 menuHamburger.addEventListener('click', () => {
