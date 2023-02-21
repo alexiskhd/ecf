@@ -19,7 +19,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 class DashboardController extends AbstractDashboardController
 {
     #[Route('/administration', name: 'administration')]
-    //#[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_ADMIN')]
     public function index(): Response
     {
         //return parent::index();
