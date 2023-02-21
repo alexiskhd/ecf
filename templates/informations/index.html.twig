@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Informations
+{% endblock %}
+{% block body %}
+<body>
+	<div class="container__info">
+		<div class="container__text">
+			<h3 class="title__info">Le restaurant</h3>
+			<div class="text__info">
+				<p>
+					Vous reçoit tout au long de l'année uniquement sur
+					<b>réservation</b>
+					effectuée en ligne ou par telephone. Pour toutes demandes de réservation en ligne un
+					<b>email de confirmation</b>
+					vous sera transmis dans les plus bref delais.</p>
+			</div>
+
+			<h4 class="title__cancelation">Annulation ou modification</h4>
+			<p>Par téléphone :
+				<a href="tel:0456000000">0456000000</a>
+				<br>
+				Par email : 
+				<a href="mailto:LeQuaiAntique@email.com">LeQuaiAntique@email.com</a>
+			</p>
+
+			<h4 class="title__road">Accès</h4>
+			<div class="road">
+				<p> <b> En provenance de :</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+				<p><b> En provenance de :</b>   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div>
+		</div>
+
+        <div class="container__video">
+            <video class="info__video" autoplay muted loop>
+				<source src="assets/video.mp4" type="video/mp4">
+			</video>
+        </div>
+	</div>
+</body>
+{% endblock %}

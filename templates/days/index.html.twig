@@ -9,26 +9,18 @@
     {% endblock %}
 
 {% block body %}
-<body>
-<h1>Flatpickr</h1>
 
-<div>
-    <h2>Basic DateTime</h2>
-    <input type="text" id="basicDate" placeholder="Please select Date Time" data-input>
-    <h2>Range Datetime</h2>
-    <input type="text" id="rangeDate" placeholder="Please select Date Range" data-input>
-</div>
-<h2>Week Number with Reset Date</h2>
-
-
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
-<script>
-    $("#basicDate").flatpickr({
-    enableTime: true,
-    dateFormat: "F, d Y H:i"
-    });
-</script>
-</body>
+        <div class="horaires">
+            <h3>horaires d'ouverture :</h3>
+            <div>
+                <p>lundi: 12h-15h / 19h-22h</p>
+                <p>Mardi: 12h-15h / 19h-22h</p>
+                <p>Mercredi: fermé</p>
+                <p>Jeudi: 12h-15h / 19h-22h</p>
+                <p>Vendredi: 12h-14h / 19h-22h</p>
+                <p>Samedi: 19h-22h</p>
+                <p>Dimanche: fermé</p>
+            </div>
+        </div>
 {% endblock %}
 

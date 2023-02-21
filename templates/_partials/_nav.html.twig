@@ -1,23 +1,52 @@
-    <header>
-        <nav class="navbar">
-            <a href="#"><img src="./assets/logo.png" alt="" class="logo"></a>
-            <div class="nav__links">
-                <ul>
-                    <li><a href="{{path('app_main')}}" class="nav__btn active">À propos</a></li>
-                    <li><a href= "{{path('app_menus')}}" class="nav__btn">Cartes</a></li>
-                    <li><a href= "{{path('app_login')}}" class="nav__btn">Réserver</a></li>
-                    <li><a href="#" class="nav__btn">Horaires</a></li>
-                    <li><a href="#" class="nav__btn">Infos</a></li>
-                    {% if app.user %}
-                    <li><a href="#" class="nav__btn">Me deconnecter</a></li>
-                   
-                        
-                    {% endif %}
-                    
-                </ul>
-            </div>
+<header>
+	<nav class="navbar">
+		<a href="#"><img src="./assets/logo.png" alt="" class="logo"></a>
 
-            <img class="menuHamburger" src="./assets/Hamburger_icon.svg.png" alt="">
+		<div class="nav__links">
+			<ul>
+				<li>
+					<a href="{{path('app_accueil')}}" class="nav__btn active">Accueil</a>
+				</li>
+				<li>
+					<a href="{{path('app_cartes')}}" class="nav__btn">Cartes</a>
+				</li>
+				<li>
+					<a href="{{path('app_reservation')}}" class="nav__btn">Réserver</a>
+				</li>
+				<li>
+					<a href="{{path('app_informations')}}" class="nav__btn">Informations</a>
+				</li>
+			</ul>
+		</div>
+		<img class="menuBurger" src="./assets/Hamburger_icon.svg.png" alt="">
+		<div class="burger">
+			<span><span/>
+		</div>
+	</nav>
+</header>
 
-        </nav>
-    </header>
+{% block javascript %}
+
+<script>
+// menu burger 
+	const menuBurger = document.querySelector('.menuBurger')
+    const navLinks = document.querySelector('.nav__links')
+
+    menuBurger.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-menu')
+    })
+
+// bouton active navbar
+    var btncontainer = document.getElementsByClassName('nav__links');
+    var btns = document.getElementsByClassName('nav__btn');
+
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', function () {
+            var current = document.getElementsByClassName('active');
+            current[0].className = current[0].className.replace(' active'),
+            this.className += ' active';
+        })
+    };
+</script>
+
+{% endblock %}

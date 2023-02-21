@@ -11,7 +11,7 @@ use Doctrine\Persistence\ManagerRegistry;
 
 class CategoriesController extends AbstractController
 {
-    #[Route('/menus', name: 'app_menus')]
+    #[Route('/cartes', name: 'app_cartes')]
     public function index(ManagerRegistry $doctrine): Response
     {
 
@@ -153,7 +153,7 @@ class CategoriesController extends AbstractController
             'controller_name' => 'CategoriesController',
         ]);
     }
-    #[Route('/menus', name: 'app_menus')]
+    #[Route('/cartes', name: 'app_cartes')]
     public function ShowMenus(CategoriesRepository $categoriesRepository): Response
     {
         return $this->render('categories/index.html.twig', [

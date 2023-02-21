@@ -1,8 +1,6 @@
 import flatpickr from 
 "https://cdn.skypack.dev/flatpickr@4.6.13";
 
-
-
 const initFlatpickr = () => {
     const FP = document.getElementId('date');
     Flatpickr(FP, {
@@ -11,19 +9,17 @@ const initFlatpickr = () => {
         )],
         enableTime: true,
     })
-}	
-
+}
 initFlatpickr();
 
 
 // menu Burger //
-const menuHamburger = document.querySelector(".menuHamburger")
-const navLinks = document.querySelector(".nav__links")
+const menuHamburger = document.querySelector('.menuHamburger')
+const navLinks = document.querySelector('.nav__links')
     
 menuHamburger.addEventListener('click', () => {
         navLinks.classList.toggle('mobile-menu')
     })
-    
     var btncontainer=document.getElementsByClassName("nav__links");
     var btns=document.getElementsByClassName("nav__btn");
     
@@ -33,6 +29,12 @@ menuHamburger.addEventListener('click', () => {
             current[0].className = current[0].className.replace(" active"),
             this.className += " active";
         })
-    }
+    };
+
+    const burger = document.querySelector('burger')
+
+    burger.addEventListener('click', ()=>{
+        burger.classList.toggle('active)')
+    });
 
 

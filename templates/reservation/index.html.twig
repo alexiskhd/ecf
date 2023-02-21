@@ -1,48 +1,98 @@
 {% extends 'base.html.twig' %}
-{% block title %}Hello ReservationController! {% endblock %}
- {% block stylesheets %}
-  {% endblock %}
-{% block body %}
-<body>
-	<main>
-		<div class="main">
-			<video class="background__video" autoplay muted loop>
-				<source src="assets/video.mp4" type="video/mp4">
-			</video>
-			<div class="container__form">
-			<input type="text" id="basicDate" placeholder="Please select Date Time" data-input>
-			<input type="date" id="form-date" placeholder="Please select Date Time" data-input>
-				{{form_start(form)}}
-				{{form_row(form.date)}}
-				{{form_row(form.heure)}}				
-				{{form_row(form.nombreDeCouvert)}}
-				{{form_row(form.nom)}}
-				{{form_row(form.email)}}
-				{{form_row(form.phone)}}
-				<button type="submit" class="btn btn-dark">Reserver</button>
-				{{form_end(form)}}
-			</div>		
-		</main>
-
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        (html comment removed:   Flatpickr  )
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
-    
-	<script>
-    	$("#basicDate").flatpickr({
-    		enableTime: true,
-        	dateFormat: "F, d Y H:i"
-    	});
-
-	</script>
-</body>
+{% block title %}Réservation
 {% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js">
+{% endblock %}
+{% block body %}
+	<body>
+		<main>
+			<div class="main">
+				<video class="background__video" autoplay muted loop>
+					<source src="assets/video.mp4" type="video/mp4">
+				</video>
+				<div class="container__form">
+					{% for message in app.flashes('success') %}
+						<div class="alert alert-success">{{ message }}</div>
+					{% endfor %}
+					<div class="form__reservation">
+						<!--<input type="date" id="form-date" placeholder="Please select Date Time" data-input>
+						<input type="date" id="date" placeholder="Please select Date Time" data-input>
+						
+						<input type="text" id="basicDate" placeholder="Please select Date Time">
+						-->
+						{{form_start(form)}}
+						<div class="label"> {{form_label(form.date)}}</div>
+							{{form_widget(form.date)}}
 
-	
+						
+						<div class="label mt-2"> {{form_label(form.heure)}}</div>
+							{{form_widget(form.heure)}}
 
-	
+						
+						<div class="label mt-3"> {{form_label(form.nombreDeCouvert)}}</div>
+							{{form_widget(form.nombreDeCouvert)}}
 
-	
-	
-	
+						<div class="label mt-3"> {{form_label(form.nom)}}</div>
+							{{form_widget(form.nom)}}
+						
+						<div class="label mt-3"> {{form_label(form.email)}}</div>
+							{{form_widget(form.email)}}
+						
+						<div class="label mt-3"> {{form_label(form.phone)}}</div>
+							{{form_widget(form.phone)}}
+
+						<button type="submit" class="btn btn-dark mt-4">Reserver</button>
+						{{form_end(form)}}
+					</div>
+				</div>
+			</main>
+
+			
+			
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-
+
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+
+			<script>
+
+				$("#basicDate").flatpickr(
+					{
+						enableTime: true, 
+						dateFormat: "F, d Y",
+						disable: [(date) => (
+							[0, 3].includes(date.getDay())
+						)],
+						locale: {
+							"firstDayOfWeek": 1
+						}
+
+					}
+				);
+
+
+				$("#reservation_date").flatpickr(
+					{
+						enableTime: true, 
+						dateFormat: "Y-m-d",
+						disable: [(date) => (
+							[0, 3].includes(date.getDay())
+						)],
+						locale: 'fr'
+
+					}
+				);
+
+				
+
+					
+
+			</script>
+
+			<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+  
+		</body>
+	{% endblock %}
+

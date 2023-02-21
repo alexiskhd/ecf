@@ -4,8 +4,10 @@ namespace App\Controller\Admin;
 
 use App\Entity\Reservation;
 use App\Entity\Categories;
-use App\Entity\Medias;
+use App\Entity\Images;
 use App\Entity\Days;
+use App\Entity\Horaires;
+use App\Entity\HomeBanners;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -16,7 +18,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
 class DashboardController extends AbstractDashboardController
 {
-    #[Route('/admin', name: 'admin')]
+    #[Route('/administration', name: 'administration')]
+    //#[IsGranted('ROLE_ADMIN')]
     public function index(): Response
     {
         //return parent::index();
@@ -44,8 +47,6 @@ class DashboardController extends AbstractDashboardController
             ->setTitle('Le Quai Antique');
     }
 
-  
-
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
@@ -56,12 +57,12 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::subMenu('Carte/Menus', 'fa fa-cutlery', Categories::class)->setSubItems([
             MenuItem::linkToCrud('show Carte/Menus', 'fa fa-eye', Categories::class),
             MenuItem::linkToCrud('edit Carte/Menus', 'fa-solid fa-pen-to-square', Categories::class)->setAction(Crud::PAGE_EDIT),
-        ]);;
-
-        yield MenuItem::linkToCrud('Horaires', 'fa-solid fa-clock', Days::class);
-        yield MenuItem::linkToCrud('Médias', 'fa fa-photo-film', Medias::class);
-      
-       
+        ]);
+        yield MenuItem::subMenu('Horaires', 'fa-solid fa-clock')->setSubItems([
+            MenuItem::linkToCrud('Jours', 'fa-solid fa-clock', Days::class),
+        ]);
+        
+        
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
 }

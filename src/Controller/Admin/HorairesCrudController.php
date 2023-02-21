@@ -2,21 +2,18 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Days;
+use App\Entity\Horaires;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
-
-
-class DaysCrudController extends AbstractCrudController
+class HorairesCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Days::class;
+        return Horaires::class;
     }
 
     
@@ -24,9 +21,7 @@ class DaysCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('Jour'),
-            TextField::new('lunch'),
-            TextField::new('diner'),
+            TextField::new('name'),
         ];
     }
     

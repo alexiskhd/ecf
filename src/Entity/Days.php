@@ -16,55 +16,59 @@ class Days
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $jour = null;
+    #[ORM\Column(length: 255)]
+    private ?string $jour = null;
 
-    #[ORM\ManyToMany(targetEntity: Horaires::class, inversedBy: 'days')]
-    private Collection $horaire;
+    #[ORM\Column(length: 30)]
+    private ?string $lunch = null;
 
-    public function __construct()
-    {
-        $this->horaire = new ArrayCollection();
-    }
+    #[ORM\Column(length: 20)]
+    private ?string $diner = null;
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getJour(): ?\DateTimeInterface
+    public function getJour(): ?string
     {
         return $this->jour;
     }
 
-    public function setJour(\DateTimeInterface $jour): self
+    public function setJour(string $jour): self
     {
         $this->jour = $jour;
 
         return $this;
     }
 
-    /**
-     * @return Collection<int, Horaires>
-     */
-    public function getHoraire(): Collection
+    public function getLunch(): ?string
     {
-        return $this->horaire;
+        return $this->lunch;
     }
 
-    public function addHoraire(Horaires $horaire): self
+    public function setLunch(string $lunch): self
     {
-        if (!$this->horaire->contains($horaire)) {
-            $this->horaire->add($horaire);
-        }
+        $this->lunch = $lunch;
 
         return $this;
     }
 
-    public function removeHoraire(Horaires $horaire): self
+    public function getDiner(): ?string
     {
-        $this->horaire->removeElement($horaire);
+        return $this->diner;
+    }
+
+    public function setDiner(string $diner): self
+    {
+        $this->diner = $diner;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->lunch;
     }
 }

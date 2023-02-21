@@ -24,13 +24,8 @@ class ReservationType extends AbstractType
     {
         $builder
             ->add('date', DateType::class,[
-                'attr' => [
-                    'class' => 'form-floating',
-                    'id' => 'form-date'
-                ],
                 'widget' => 'single_text',
-                'html5' => false
-                
+                'html5' => false,
             ])
 
             ->add('heure', TimeType::class, [
@@ -72,8 +67,7 @@ class ReservationType extends AbstractType
                 'attr' => [
                     'class' => 'form-floating'
                 ]
-            ])
-        ;
+                ]);              
     }
     
     public function configureOptions(OptionsResolver $resolver): void

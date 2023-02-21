@@ -29,9 +29,6 @@ class Reservation
     #[ORM\Column(length: 100)]
     private ?string $email = null;
 
-    #[ORM\ManyToOne(inversedBy: 'reservations')]
-    private ?Services $service = null;
-
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $heure = null;
 
@@ -97,18 +94,6 @@ class Reservation
     public function setEmail(string $email): self
     {
         $this->email = $email;
-
-        return $this;
-    }
-
-    public function getServices(): ?Services
-    {
-        return $this->service;
-    }
-
-    public function setServices(?Services $service): self
-    {
-        $this->service = $service;
 
         return $this;
     }
